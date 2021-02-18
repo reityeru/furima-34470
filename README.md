@@ -52,7 +52,7 @@
 | shipping_area_id | integer   | null: false |
 | municipality     | string    | null: false |
 | town_name        | string    | null: false |
-| address          | integer   | null: false |
+| address          | string    | null: false |
 | building_name    | string    |             |
 | phone_number     | string    | null: false |
 | item             | reference | null: false |
