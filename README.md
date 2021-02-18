@@ -38,8 +38,8 @@
 ### Association
 
 - has_many   :comments
-- has_one    :purchase_records
-- belongs_to :users
+- has_one    :purchase_record
+- belongs_to :user
 
 
 
@@ -58,7 +58,7 @@
 
 ### Association
 
-- belongs_to :purchase_records
+- belongs_to :purchase_record
 
 
 ## purchase_recordsテーブル
