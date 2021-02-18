@@ -63,10 +63,11 @@
 
 
 ## purchase_recordsテーブル
-| Column | Type      | Options     |
-| ------ | --------- | ----------- |
-| user   | reference | null: false |
-| item   | reference | null: false |
+| Column                  | Type      | Options     |
+| ----------------------- | --------- | ----------- |
+| user                    | reference | null: false |
+| item                    | reference | null: false |
+| shipping_information_id | reference | null: false |
 
 ### Association
 
