@@ -37,9 +37,11 @@
 
 ### Association
 
-- has_many :comments
-- has_one  :shipping_informations
-- has_one  :purchase_records
+- has_many   :comments
+- has_one    :shipping_informations
+- has_one    :purchase_records
+- belongs_to :users
+
 
 
 
