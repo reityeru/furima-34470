@@ -55,7 +55,7 @@
 | address          | string    | null: false |
 | building_name    | string    |             |
 | phone_number     | string    | null: false |
-| item             | reference | null: false |
+| purchase_records | reference | null: false |
 
 ### Association
 
