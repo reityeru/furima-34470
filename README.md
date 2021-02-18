@@ -59,7 +59,7 @@
 
 ### Association
 
-- belongs_to :items
+- belongs_to :purchase_records
 
 
 ## purchase_recordsテーブル
