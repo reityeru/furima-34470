@@ -70,9 +70,9 @@
 
 ### Association
 
-belongs_to :users
-belongs_to :items
-has_one    :shipping_informations
+belongs_to :user
+belongs_to :item
+has_one    :shipping_information
 
 
 ## commentsテーブル
@@ -85,5 +85,5 @@ has_one    :shipping_informations
 
 ### Association
 
-belongs_to :users
-belongs_to :items
+belongs_to :user
+belongs_to :item
