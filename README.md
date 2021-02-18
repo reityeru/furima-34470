@@ -72,6 +72,7 @@
 
 belongs_to :users
 belongs_to :items
+has_one    :shipping_informations
 
 
 ## commentsテーブル
