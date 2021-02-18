@@ -1,24 +1,88 @@
-# README
+# テーブル設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## usersテーブル
 
-Things you may want to cover:
+| Column           | Type   | Options     |
+| ---------------- | ------ | ----------- |
+| nickname         | string | null: false |
+| password         | string | null: false |
+| email            | string | null: false |
+| last_name        | string | null: false |
+| first_name       | string | null: false |
+| last_name(kana)  | string | null: false |
+| first_name(kana) | string | null: false |
+| birthday         | data   | null: false |
 
-* Ruby version
 
-* System dependencies
+### Association
 
-* Configuration
+- has_many :items
+- has_many :purchase_records
+- has_many :comments
 
-* Database creation
 
-* Database initialization
+## itemsテーブル
 
-* How to run the test suite
+| Column           | Type      | Options     |
+| ---------------- | --------- | ----------- |
+| item_name        | string    | null: false |
+| item_image       | ActiveStorageで実装      |
+| iteme_text       | text      | null: false |
+| item_category    | string    | null: false |
+| item_status      | string    | null: false |
+| item_price       | integer   | null: false |
+| shipping_charges | string    | null: false |
+| shipping_area    | string    | null: false |
+| day_to_ship      | string    | null: false |
+| user             | reference | null: false |
 
-* Services (job queues, cache servers, search engines, etc.)
+### Association
 
-* Deployment instructions
+- has_many :comments
+- has_one  :shipping_informations
+- has_one  :purchase_records
 
-* ...
+
+
+## shipping_informationsテーブル
+
+| Column        | Type      | Options     |
+| ------------- | --------- | ----------- |
+| postal_code   | integer   | null: false |
+| prefectures   | string    | null: false |
+| municipality  | string    | null: false |
+| town_name     | string    | null: false |
+| address       | integer   | null: false |
+| building_name | string    |             |
+| phone_number  | integer   | null: false |
+| item          | reference | null: false |
+
+### Association
+
+- belongs_to :items
+
+
+## purchase_recordsテーブル
+| Column | Type      | Options     |
+| ------ | --------- | ----------- |
+| user   | reference | null: false |
+| item   | reference | null: false |
+
+### Association
+
+belongs_to :users
+belongs_to :items
+
+
+## commentsテーブル
+
+| Column | Type      | Options     |
+| ------ | --------- | ----------- |
+| text   | text      | null: false |
+| user   | reference | null: false |
+| item   | reference | null: false |
+
+### Association
+
+belongs_to :users
+belongs_to :items
