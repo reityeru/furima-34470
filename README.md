@@ -26,7 +26,6 @@
 | Column           | Type      | Options     |
 | ---------------- | --------- | ----------- |
 | item_name        | string    | null: false |
-| item_image       | ActiveStorageで実装      |
 | iteme_text       | text      | null: false |
 | item_category    | string    | null: false |
 | item_status      | string    | null: false |
