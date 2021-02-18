@@ -46,16 +46,16 @@
 
 ## shipping_informationsテーブル
 
-| Column        | Type      | Options     |
-| ------------- | --------- | ----------- |
-| postal_code   | integer   | null: false |
-| prefectures   | string    | null: false |
-| municipality  | string    | null: false |
-| town_name     | string    | null: false |
-| address       | integer   | null: false |
-| building_name | string    |             |
-| phone_number  | integer   | null: false |
-| item          | reference | null: false |
+| Column           | Type      | Options     |
+| ---------------- | --------- | ----------- |
+| postal_code      | integer   | null: false |
+| shipping_area_id | integer   | null: false |
+| municipality     | string    | null: false |
+| town_name        | string    | null: false |
+| address          | integer   | null: false |
+| building_name    | string    |             |
+| phone_number     | integer   | null: false |
+| item             | reference | null: false |
 
 ### Association
 
