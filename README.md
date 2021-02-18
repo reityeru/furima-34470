@@ -23,17 +23,17 @@
 
 ## itemsテーブル
 
-| Column              | Type       | Options     |
-| ------------------- | ---------- | ----------- |
-| item_name           | string     | null: false |
-| iteme_text          | text       | null: false |
-| item_category_id    | integer    | null: false |
-| item_status_id      | integer    | null: false |
-| item_price          | integer    | null: false |
-| shipping_charges_id | integer    | null: false |
-| shipping_area_id    | integer    | null: false |
-| day_to_ship_id      | integer    | null: false |
-| user                | reference  | null: false |
+| Column              | Type       | Options                        |
+| ------------------- | ---------- | ------------------------------ |
+| item_name           | string     | null: false                    |
+| iteme_text          | text       | null: false                    |
+| item_category_id    | integer    | null: false                    |
+| item_status_id      | integer    | null: false                    |
+| item_price          | integer    | null: false                    |
+| shipping_charges_id | integer    | null: false                    |
+| shipping_area_id    | integer    | null: false                    |
+| day_to_ship_id      | integer    | null: false                    |
+| user                | reference  | null: false, foreign_key: true |
 
 ### Association
 
@@ -55,7 +55,6 @@
 | address          | string    | null: false |
 | building_name    | string    |             |
 | phone_number     | string    | null: false |
-| purchase_records | reference | null: false |
 
 ### Association
 
@@ -63,11 +62,11 @@
 
 
 ## purchase_recordsテーブル
-| Column                  | Type      | Options     |
-| ----------------------- | --------- | ----------- |
-| user                    | reference | null: false |
-| item                    | reference | null: false |
-| shipping_information_id | reference | null: false |
+| Column                  | Type      | Options                        |
+| ----------------------- | --------- | ------------------------------ |
+| user                    | reference | null: false, foreign_key: true |
+| item                    | reference | null: false, foreign_key: true |
+| shipping_information    | reference | null: false, foreign_key: true |
 
 ### Association
 
@@ -78,11 +77,11 @@ has_one    :shipping_informations
 
 ## commentsテーブル
 
-| Column | Type      | Options     |
-| ------ | --------- | ----------- |
-| text   | text      | null: false |
-| user   | reference | null: false |
-| item   | reference | null: false |
+| Column | Type      | Options                        |
+| ------ | --------- | ------------------------------ |
+| text   | text      | null: false, foreign_key: true |
+| user   | reference | null: false, foreign_key: true |
+| item   | reference | null: false, foreign_key: true |
 
 ### Association
 
