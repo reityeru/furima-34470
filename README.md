@@ -26,7 +26,7 @@
 | Column              | Type        | Options                        |
 | ------------------- | ----------- | ------------------------------ |
 | item_name           | string      | null: false                    |
-| iteme_text          | text        | null: false                    |
+| item_text           | text        | null: false                    |
 | item_category_id    | integer     | null: false                    |
 | item_status_id      | integer     | null: false                    |
 | item_price          | integer     | null: false                    |
