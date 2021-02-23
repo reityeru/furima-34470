@@ -121,7 +121,19 @@ RSpec.describe Item, type: :model do
     end
 
     it "価格が半角数字のみでしか出品できないこと" do
-      @item.item_price = ３００
+      @item.item_price = "３００"
+      @item.valid?
+      expect(@item.errors.full_messages).to include("Item price is not a number")
+    end
+
+    it "価格が半角英数混合では出品できないこと" do
+      @item.item_price = "300en"
+      @item.valid?
+      expect(@item.errors.full_messages).to include("Item price is not a number")
+    end
+
+    it "価格が半角英語のみでは出品できないこと" do
+      @item.item_price = "sanbyakuen"
       @item.valid?
       expect(@item.errors.full_messages).to include("Item price is not a number")
     end
