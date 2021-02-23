@@ -9,7 +9,6 @@ function item_price() {
     
     const salesProfit = document.getElementById("profit")
     const calculationResult = inputValue * 0.1
-    console.log(calculationResult);
     salesProfit.innerHTML =(Math.floor(inputValue - calculationResult));
  });
 }
