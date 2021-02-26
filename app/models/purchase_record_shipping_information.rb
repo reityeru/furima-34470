@@ -1,6 +1,6 @@
 class PurchaseRecordShippingInformation
   include ActiveModel::Model
-  attr_accessor :postal_code, :shipping_area_id, :municipality, :address, :building_name, :phone_number, :purchase_record_id, :user_id, :item_id, :number, :exp_month, :exp_year, :cvc
+  attr_accessor :postal_code, :shipping_area_id, :municipality, :address, :building_name, :phone_number, :purchase_record_id, :user_id, :item_id, :token
 
 # ここにバリデーションの処理を書く
   with_options presence: true do
@@ -11,10 +11,7 @@ class PurchaseRecordShippingInformation
     validates :phone_number, format: {with: /\A\d{10,11}\z/}
     validates :user_id
     validates :item_id
-    validates :number
-    validates :exp_month
-    validates :exp_year
-    validates :cvc
+    validates :token
   end
 
   def save
