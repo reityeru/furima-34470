@@ -27,26 +27,6 @@ RSpec.describe PurchaseRecordShippingInformation, type: :model do
   end
 
   context '保存できない場合' do
-    it 'クレジットカード番号が空では購入できない' do
-      @purchase_record_shipping_information.number = ""
-      @purchase_record_shipping_information.valid?
-      expect(@purchase_record_shipping_information.errors.full_messages).to include("Number can't be blank")
-    end
-    it 'クレジットカードの有効期限（月）が空では購入できない' do
-      @purchase_record_shipping_information.exp_month = ""
-      @purchase_record_shipping_information.valid?
-      expect(@purchase_record_shipping_information.errors.full_messages).to include("Exp month can't be blank")
-    end
-    it 'クレジットカードの有効期限（年）が空では購入できない' do
-      @purchase_record_shipping_information.exp_year = ""
-      @purchase_record_shipping_information.valid?
-      expect(@purchase_record_shipping_information.errors.full_messages).to include("Exp year can't be blank")
-    end
-    it 'クレジットカードのセキュリティコードが空では購入できない' do
-      @purchase_record_shipping_information.cvc = ""
-      @purchase_record_shipping_information.valid?
-      expect(@purchase_record_shipping_information.errors.full_messages).to include("Cvc can't be blank")
-    end
     it '郵便番号が空では購入できない' do
       @purchase_record_shipping_information.postal_code = ""
       @purchase_record_shipping_information.valid?
@@ -102,5 +82,11 @@ RSpec.describe PurchaseRecordShippingInformation, type: :model do
       @purchase_record_shipping_information.valid?
       expect(@purchase_record_shipping_information.errors.full_messages).to include("Item can't be blank")
     end
+    it 'tokenが空では購入できないこと' do
+      @purchase_record_shipping_information.token = nil
+      @purchase_record_shipping_information.valid?
+      expect(@purchase_record_shipping_information.errors.full_messages).to include("Token can't be blank")
+    end
+
   end
 end
