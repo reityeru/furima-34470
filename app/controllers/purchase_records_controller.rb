@@ -1,6 +1,5 @@
 class PurchaseRecordsController < ApplicationController
   before_action :authenticate_user!, only: [:index]
-  before_action :sold_out_item, only: [:index]
   before_action :set_item, only: [:index, :create]
   before_action :move_to_root, only: [:index]
 
@@ -40,13 +39,11 @@ class PurchaseRecordsController < ApplicationController
     @item = Item.find(params[:item_id])
   end
 
-  def sold_out_item
-    set_item
-    redirect_to root_path if @item.purchase_record.present?
-  end
-
   def move_to_root
     set_item
-    redirect_to root_path if current_user.id == @item.user_id
+    if @item.purchase_record.present? || current_user.id == @item.user_id
+      redirect_to root_path 
+    end
   end
+
 end
