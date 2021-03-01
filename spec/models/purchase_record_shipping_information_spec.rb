@@ -36,8 +36,7 @@ RSpec.describe PurchaseRecordShippingInformation, type: :model do
     it '都道府県が空では購入できない' do
       @purchase_record_shipping_information.shipping_area_id = ''
       @purchase_record_shipping_information.valid?
-      expect(@purchase_record_shipping_information.errors.full_messages).to include("Shipping area can't be blank",
-                                                                                    'Shipping area is not a number')
+      expect(@purchase_record_shipping_information.errors.full_messages).to include("Shipping area can't be blank")
     end
     it '市町村区が空では購入できない' do
       @purchase_record_shipping_information.municipality = ''
