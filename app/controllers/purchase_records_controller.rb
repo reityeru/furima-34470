@@ -40,7 +40,6 @@ class PurchaseRecordsController < ApplicationController
   end
 
   def move_to_root
-    set_item
     if @item.purchase_record.present? || current_user.id == @item.user_id
       redirect_to root_path 
     end
