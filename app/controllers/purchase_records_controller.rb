@@ -1,7 +1,7 @@
 class PurchaseRecordsController < ApplicationController
-  before_action :authenticate_user!, only: [:index]
+  before_action :authenticate_user!, only: [:index, :create]
   before_action :set_item, only: [:index, :create]
-  before_action :move_to_root, only: [:index]
+  before_action :move_to_root, only: [:index, :create]
 
   def index
     @purchase_record_shipping_information = PurchaseRecordShippingInformation.new
