@@ -1,6 +1,6 @@
 class PurchaseRecordShippingInformation
   include ActiveModel::Model
-  attr_accessor :postal_code, :shipping_area_id, :municipality, :address, :building_name, :phone_number, :purchase_record_id,
+  attr_accessor :postal_code, :shipping_area_id, :municipality, :address, :building_name, :phone_number,
                 :user_id, :item_id, :token
 
   # ここにバリデーションの処理を書く
